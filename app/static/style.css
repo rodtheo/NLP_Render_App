@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(185, 185, 185);
+    background-color: #90909c;
 }
 
 .no-display {
@@ -14,16 +14,26 @@ body {
 }
 
 .title {
-    font-size: 30px;
+    font-size: 40px;
     margin-top: 1em;
     margin-bottom: 1em;
-    color: #262626;
+    color: #fff;
+    font-family: times, serif;
+    font-style:italic, bolder;
 }
 
+.text {
+    color: #fff;
+    font-family: times, serif;
+    font-style:italic;
+    font-size: 20px;
+}
+
+
 .description {
-    color: #262626;
-    font-family: serif, times;
-    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .content {
@@ -32,51 +42,34 @@ body {
 
 .analyze {
     margin-top: 5em;
+    margin-left: 30px;
 }
 
 .upload-label {
     padding: 10px;
-    font-size: 12px;
+    font-size: 14px;
+    color: #fff;
 }
 
 .result-label {
     margin-top: 0.5em;
     padding: 10px;
-    font-size: 13px;
-    color: #262626
-}
-
-button.choose-file-button {
-    width: 200px;
-    height: 40px;
-    border-radius: 8px;
-    border: solid 1px #424242;
-    font-size: 13px;
-    color: #424242;
-}
-
-button .choose-file-button:hover {
-    border: solid 1px black;
-    background-color: #424242;
-    font-size: 13px;
+    font-size: 16px;
     color: #fff;
 }
 
-button.analyze-button {
+.analyze .analyze-button {
     width: 200px;
     height: 40px;
-    border-radius: 2px;
-    border: solid 1px #424242;
-    font-size: 13px;
-    color: #424242;
-}
-button .analyze-button :hover {
     border: solid 1px black;
-    background-color: #424242;
+    border-radius: 6px;
+    background-color: transparent;
     font-size: 13px;
-    color: #fff;
+    cursor: pointer;
+    color: black;
 }
 
-button:focus {
-    outline: 0;
+.analyze .analyze-button:hover {
+    background-color: #303031;
+    color: #fff;
 }
