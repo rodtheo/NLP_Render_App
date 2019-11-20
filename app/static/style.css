@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background-color: rgb(185, 185, 185);
 }
 
 .no-display {
@@ -20,6 +20,12 @@ body {
     color: #262626;
 }
 
+.description {
+    color: #262626;
+    font-family: serif, times;
+    font-size: 13px;
+}
+
 .content {
     margin-top: 10em;
 }
@@ -37,26 +43,38 @@ body {
     margin-top: 0.5em;
     padding: 10px;
     font-size: 13px;
+    color: #262626
 }
 
 button.choose-file-button {
     width: 200px;
     height: 40px;
-    border-radius: 2px;
-    background-color: #ffffff;
-    border: solid 1px #7052CB;
+    border-radius: 8px;
+    border: solid 1px #424242;
     font-size: 13px;
-    color: #7052CB;
+    color: #424242;
+}
+
+button .choose-file-button:hover {
+    border: solid 1px black;
+    background-color: #424242;
+    font-size: 13px;
+    color: #fff;
 }
 
 button.analyze-button {
     width: 200px;
     height: 40px;
-    border: solid 1px #000000;
     border-radius: 2px;
-    background-color: #000000;
+    border: solid 1px #424242;
     font-size: 13px;
-    color: #ffffff;
+    color: #424242;
+}
+button .analyze-button :hover {
+    border: solid 1px black;
+    background-color: #424242;
+    font-size: 13px;
+    color: #fff;
 }
 
 button:focus {
