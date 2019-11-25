@@ -12,7 +12,7 @@ from starlette.staticfiles import StaticFiles
 export_file_url = 'https://drive.google.com/uc?export=download&id=1uVBN6lyVrdsD7AkKF_hRbzeVQz_7JlxY'
 export_file_name = 'tweets-depressed-ulmfit-ok.pkl'
 
-classes = [True, False]
+classes = ['False', 'True]
 path = Path(__file__).parent
 
 app = Starlette()
