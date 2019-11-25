@@ -3,15 +3,14 @@ import asyncio
 import uvicorn
 from fastai import *
 from fastai.text import *
-from sklearn.metrics import f1_score
 from io import BytesIO
 from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://drive.google.com/uc?export=download&id=1HgfpOQkyD3tOLUEwzZlHRsw-IVF8lJgz'
-export_file_name = 'tweets-depressed-ulmfit.pkl'
+export_file_url = 'https://drive.google.com/uc?export=download&id=1uVBN6lyVrdsD7AkKF_hRbzeVQz_7JlxY'
+export_file_name = 'tweets-depressed-ulmfit-ok.pkl'
 
 classes = [True, False]
 path = Path(__file__).parent
@@ -29,8 +28,6 @@ async def download_file(url, dest):
             with open(dest, 'wb') as f:
                 f.write(data)
 
-@np_func
-def f1(inp,targ): return f1_score(targ, np.argmax(inp, axis=-1))
 
 async def setup_learner():
     await download_file(export_file_url, path / export_file_name)
