@@ -9,10 +9,10 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = '<Your file url here>'
-export_file_name = '<Your filename here>'
+export_file_url = 'https://drive.google.com/uc?export=download&id=1HgfpOQkyD3tOLUEwzZlHRsw-IVF8lJgz'
+export_file_name = 'tweets-depressed-ulmfit.pkl'
 
-classes = ['<Your classes here>']
+classes = [True, False]
 path = Path(__file__).parent
 
 app = Starlette()
