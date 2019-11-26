@@ -33,7 +33,7 @@ function analyze() {
       el('container').innerHTML = "";
       var data = response["data"];
         // set the data
-  //      console.log(data);
+      console.log(data);
         // create the chart
       var chart = anychart.column();
 
@@ -59,7 +59,7 @@ function analyze() {
   fileData.append("file", uploadFiles);
   xhr.send(fileData);
 
-/* anychart.onDocumentReady(function() {
+ anychart.onDocumentReady(function() {
 	 el('container').innerHTML = "";
  	var data = {
             header: ["Name", "Probability"],
@@ -67,7 +67,7 @@ function analyze() {
 		["stats_false", 0],
 		["stats_true",0  ]
 	    ]};
-	 var data = response['data'];
+	// var data = response['data'];
         // set the data
         console.log(data);
         // create the chart
@@ -82,7 +82,7 @@ function analyze() {
         // draw
         chart.container("container");
         chart.draw();
-    });*/
+    });
   
 }
 
