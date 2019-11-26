@@ -59,7 +59,7 @@ function analyze() {
   fileData.append("file", uploadFiles);
   xhr.send(fileData);
 
- anychart.onDocumentReady(function() {
+/* anychart.onDocumentReady(function() {
 	 el('container').innerHTML = "";
  	var data = {
             header: ["Name", "Probability"],
@@ -82,7 +82,7 @@ function analyze() {
         // draw
         chart.container("container");
         chart.draw();
-    });
+    });*/
   
 }
 
