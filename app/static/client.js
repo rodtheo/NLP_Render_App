@@ -16,7 +16,7 @@ function showPicked(input) {
 
 function analyze() {
   var uploadFiles = el("content-upload").value;
-  
+  var response; 
   el("analyze-button").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
   var loc = window.location;
@@ -27,8 +27,30 @@ function analyze() {
   };
   xhr.onload = function(e) {
     if (this.readyState === 4) {
-      var response = JSON.parse(e.target.responseText);
+      response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `result= ${response["result"]}`;
+
+      el('container').innerHTML = "";
+      var data = response["data"];
+        // set the data
+  //      console.log(data);
+        // create the chart
+      var chart = anychart.column();
+
+        // add the data
+      	chart.data(data);
+
+        // set the chart title
+       chart.title("Does it have depressive content? What're the odds ?");
+	
+	chart.yScale().ticks().interval(10);
+	chart.yScale().minorTicks().interval(2);
+
+//	chart.yAxis().minorTicks().enabled(True);
+
+        // draw
+       chart.container("container");
+       chart.draw();
     }
     el("analyze-button").innerHTML = "Analyze";
   };
@@ -36,5 +58,31 @@ function analyze() {
   var fileData = new FormData();
   fileData.append("file", uploadFiles);
   xhr.send(fileData);
+
+/* anychart.onDocumentReady(function() {
+	 el('container').innerHTML = "";
+ 	var data = {
+            header: ["Name", "Probability"],
+	    rows:[ 
+		["stats_false", 0],
+		["stats_true",0  ]
+	    ]};
+	 var data = response['data'];
+        // set the data
+        console.log(data);
+        // create the chart
+        var chart = anychart.bar();
+
+        // add the data
+        chart.data(data);
+
+        // set the chart title
+        chart.title("The deadliest earthquakes in the XXth century");
+
+        // draw
+        chart.container("container");
+        chart.draw();
+    });*/
+  
 }
 

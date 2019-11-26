@@ -9,10 +9,10 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://drive.google.com/uc?export=download&id=1uVBN6lyVrdsD7AkKF_hRbzeVQz_7JlxY'
+export_file_url = 'https://drive.google.com/uc?export=download&id=1owWyk-B_V8RWgvPVBrrV0MLeYoheiFT8'
 export_file_name = 'tweets-depressed-ulmfit-ok.pkl'
 
-classes = ['False', 'True]
+classes = ['False', 'True']
 path = Path(__file__).parent
 
 app = Starlette()
@@ -59,7 +59,7 @@ async def homepage(request):
 async def analyze(request):
     data = await request.form()
     prediction = learn.predict(str(list(data.values())[0]))
-    return JSONResponse({'result': str(prediction)})
+    return JSONResponse({'result': str(prediction[0]), 'data': { 'header': ["Name", "Probability"], 'rows': [ ['NO', '{0:.2f}'.format(100*(prediction[2]).data.tolist()[0])], ['YES', '{0:.2f}'.format(100*(prediction[2]).data.tolist()[1])] ] } })
 
 if __name__ == '__main__':
     if 'serve' in sys.argv:
