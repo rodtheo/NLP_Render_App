@@ -28,9 +28,16 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `result= ${response["result"]}`;
-
-      el('container').innerHTML = "";
+      var resp_emoticon;
+      if (response["result"] == "False"){
+	      resp_emoticon = 128515
+      } else {
+	      resp_emoticon = 128532
+      }
+      el("result-label").innerHTML = `&#${resp_emoticon}`;
+// happy - 128515
+	    // sad - 128532
+      document.getElementById('container').innerHTML = "";
       var data = response["data"];
         // set the data
       console.log(data);
@@ -41,7 +48,7 @@ function analyze() {
       	chart.data(data);
 
         // set the chart title
-       chart.title("Does it have depressive content? What're the odds ?");
+       //chart.title("Does it have depressive content? What're the odds ?");
 	
 	chart.yScale().ticks().interval(10);
 	chart.yScale().minorTicks().interval(2);

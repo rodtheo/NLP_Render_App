@@ -59,7 +59,7 @@ async def homepage(request):
 async def analyze(request):
     data = await request.form()
     prediction = learn.predict(str(list(data.values())[0]))
-    return JSONResponse({'result': str(prediction[0]), 'data': { 'header': ["Name", "Probability"], 'rows': [ ['NO', '{0:.2f}'.format(100*(prediction[2]).data.tolist()[0])], ['YES', '{0:.2f}'.format(100*(prediction[2]).data.tolist()[1])] ] } })
+    return JSONResponse({'result': str(prediction[0]), 'data': { 'header': ["Name", "Probability"], 'rows': [ ['FELIZ', '{0:.2f}'.format(100*(prediction[2]).data.tolist()[0])], ['TRISTE', '{0:.2f}'.format(100*(prediction[2]).data.tolist()[1])] ] } })
 
 if __name__ == '__main__':
     if 'serve' in sys.argv:
